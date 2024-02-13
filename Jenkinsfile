@@ -3,7 +3,7 @@ pipeline {
     
     tools{
         
-        jdk 'jdk'
+        jdk 'JDK'
     }
     
     environment {
