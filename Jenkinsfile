@@ -4,7 +4,7 @@ pipeline {
     tools{
         
         jdk 'JDK'
-        sonar 'sonar-install'
+        sonar_install 'Sonar Scanner
     }
     
     environment {
