@@ -3,7 +3,7 @@ pipeline {
     
     tools{
         
-        jdk 'jdk17'
+        jdk 'jdk11'
     }
     
     environment {
@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('Git Checkout ') {
             steps {
-                git 'https://github.com/jaiswaladi246/DotNet-DEMO.git'
+                git 'https://github.com/chennareddy5/DotNet-DEMO.git'
             }
         }
         
