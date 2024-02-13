@@ -4,12 +4,12 @@ pipeline {
     tools{
         
         jdk 'JDK'
-        sonar_install 'Sonar Scanner
+        
     }
     
     environment {
         
-        SCANNER_HOME= tool 'sonar-scanner'
+        SCANNER_HOME= tool 'sonar-install'
     }
 
     stages {
