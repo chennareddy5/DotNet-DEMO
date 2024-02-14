@@ -2,23 +2,23 @@ pipeline {
     agent any
     
     tools {
-        jdk 'jdk17'
+        jdk 'JDK'
     }
     
       environment {
-        SCANNER_HOME=tool 'sonar-scanner'
+        SCANNER_HOME=tool 'sonar-install'
     }
 
     stages {
         stage('Git Checkout') {
             steps {
-                git 'https://github.com/SushantOps/DotNet-DEMO.git'
+                git 'https://github.com/chennareddy5/DotNet-DEMO.git'
             }
         }
         
         stage('OWASP Dependency') {
             steps {
-                dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'DC'
+                dependencyCheck additionalArguments: '--scan ./ ', odcInstallation: 'OWASP'
                 dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
