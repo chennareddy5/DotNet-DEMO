@@ -68,6 +68,7 @@ pipeline {
                script{
                    withDockerRegistry(credentialsId: 'Docker-credentials', toolName: 'docker') {
                     sh "docker run -d -p 5000:5000  chennareddy12/dotnet-demoapp "
+                    sh "docker ps -a"
                     }
                }
             }
