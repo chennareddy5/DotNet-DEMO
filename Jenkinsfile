@@ -69,7 +69,7 @@ pipeline {
         stage('Deloy to container') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Docker-credentials', toolName: 'docker') {
+                    withDockerRegistry(credentialsId: 'Docker-credentials', toolName: 'Docker') {
                         sh "docker run -d -p 5000:5000  chennareddy12/dotnet-demoapp "
                         sh "docker ps -a"
                     }
