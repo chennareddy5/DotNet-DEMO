@@ -35,7 +35,7 @@ pipeline {
                     sh '''$SCANNER_HOME/bin/sonar-scanner \
                         -Dsonar.projectName=Dotnet \
                         -Dsonar.projectKey=Dotnet \
-                        -Dsonar.login=squ_fa33bb9c1483ffaa0180f028a48dbee6412bef73'''
+                        -Dsonar.login=squ_133043c1cc9934edbd1d89edb85dd1c379b54c77'''
                 }
             }
         } 
