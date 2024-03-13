@@ -43,7 +43,7 @@ pipeline {
         stage('Docker build and tag') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Docker-credentials', toolName: 'Docker') {
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
                         sh "make image"
                     }
                 }
@@ -59,7 +59,7 @@ pipeline {
         stage('Docker Push') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Docker-credentials', toolName: 'Docker') {
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
                         sh "make push"
                     }
                 }
@@ -69,7 +69,7 @@ pipeline {
         stage('Deloy to container') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Docker-credentials', toolName: 'Docker') {
+                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
                         sh "docker run -d -p 5000:5000  chennareddy12/dotnet-demoapp "
                         sh "docker ps -a"
                     }
