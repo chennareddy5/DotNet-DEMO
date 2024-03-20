@@ -35,7 +35,7 @@ pipeline {
                     sh '''$SCANNER_HOME/bin/sonar-scanner \
                         -Dsonar.projectName=Dotnet \
                         -Dsonar.projectKey=Dotnet \
-                        -Dsonar.login=squ_425c8faa93c5538671722b90607c1eeb415dbd58'''
+                        -Dsonar.login=squ_bc6044374be5c02edd22fbaadc0e2271b18ee2f3'''
                 }
             }
         } 
@@ -43,7 +43,7 @@ pipeline {
         stage('Docker build and tag') {
             steps {
                 script {
-                    withDockerRegistry(credentialsId: 'Docker', toolName: 'Docker') {
+                    withDockerRegistry(credentialsId: 'Docker-credentials', toolName: 'Docker') {
                         sh "make image"
                     }
                 }
